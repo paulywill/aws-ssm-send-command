@@ -44,11 +44,13 @@ try {
             commands: [inputs.command],
         },
     }, (err, data) => {
-        var _a;
+        var _a, _b;
         if (err)
             throw err;
         console.log(data);
+        //ref: https://docs.aws.amazon.com/cli/latest/reference/ssm/send-command.html#output    
         core.setOutput("command-id", (_a = data.Command) === null || _a === void 0 ? void 0 : _a.CommandId);
+        core.setOutput("status", (_b = data.Command) === null || _b === void 0 ? void 0 : _b.Status);
     });
 }
 catch (err) {

@@ -30,11 +30,12 @@ try {
       if (err) throw err;
 
       console.log(data);
-
+      //ref: https://docs.aws.amazon.com/cli/latest/reference/ssm/send-command.html#output    
       core.setOutput("command-id", data.Command?.CommandId);
+      core.setOutput("status", data.Command?.Status);
     }
   );
-} catch (err) {
+} catch (err: any) {
   console.error(err, err.stack);
   core.setFailed(err);
 }

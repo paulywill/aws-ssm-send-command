@@ -115,6 +115,7 @@ comment: Executed by Github Actions
 
 ## Outputs
 
+Please reference AWS CLI Command Reference [Output](https://docs.aws.amazon.com/cli/latest/reference/ssm/send-command.html#output)
 ### command-id
 
 AWS SSM Run-Command id. (uuid type)
@@ -123,6 +124,20 @@ AWS SSM Run-Command id. (uuid type)
 # example
 6cf26b6f-b68f-4e20-b801-f6ee5318d000
 ```
+
+### status
+
+AWS SSM Run-Status. (string type)
+
+- Pending
+- In Progress
+- Success
+- Delivery Timed Out
+- Execution Timed Out
+- Failed
+- Incomplete
+- Cancelled
+- Rate Exceeded
 
 ## Error Handling
 
